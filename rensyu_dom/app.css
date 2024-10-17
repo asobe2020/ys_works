@@ -4,6 +4,23 @@ button {
     color: #fff;
     font-size: 30px;
     border-radius: 10px;
+    border: none;
+}
+
+.button-red {
+    background-color: rgb(255, 69, 69);
+}
+
+.button-orange {
+    background-color: rgb(255, 145, 0);
+}
+
+.button-blue {
+    background-color: #2d73ff;
+}
+
+#list-color {
+    background-color: rgb(255, 179, 87);
 }
 
 button:disabled {

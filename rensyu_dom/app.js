@@ -9,7 +9,9 @@ button.addEventListener('click', function(){
 
 const ul = document.createElement('ul')
 document.body.appendChild(ul)
-const addButton = document.querySelector('#addButton')
+const addButton = document.querySelector('#add-button')
+const clearButton = document.querySelector('#clear-button')
+const clearAllButton = document.querySelector('#clear-button_all')
 
 addButton.addEventListener('click', function(){
     const li = document.createElement('li')
@@ -17,4 +19,25 @@ addButton.addEventListener('click', function(){
     ul.appendChild(li)
 })
 
+clearButton.addEventListener('click', function(){
+    ul.removeChild(ul.lastChild)  
+})
 
+clearAllButton.addEventListener('click', function(){
+    while(ul.lastChild){
+        ul.removeChild(ul.lastChild)
+    }
+})
+
+const buttonColor = document.querySelectorAll('.color .button')
+const listColor = document.getElementById('list-color')
+
+const buttonColorClick = function(){
+    let element = document.createElement('li')
+    element.innerHTML = this.innerHTML
+    listColor.appendChild(element)
+}
+
+for(let i = 0; i < buttonColor.length; i++){
+    buttonColor[i].addEventListener('click', buttonColorClick)
+}
